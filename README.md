@@ -1,23 +1,11 @@
 # MERN-Stack
 
+> This Project is for learning MERN Stack and a walk to become a Full Stack Developer using `MongoDB`, `Express`, `React.js` and `Node.js`.  
 
-## Quick Start
+This repository contain sevarel branches contain projects:
+- [x] master
+- [ ] mern-Sample
+- [x] Todoist
 
-```bash
-# Install dependencies for server
-npm install
+To access a project, checkout that branch.
 
-# Install dependencies for client
-npm run client-install
-
-# Run the client & server with concurrently
-npm run dev
-
-# Run the Express server only
-npm run server
-
-# Run the React client only
-npm run client
-
-# Server runs on http://localhost:5000 and client on http://localhost:3000
-```
