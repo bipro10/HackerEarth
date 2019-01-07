@@ -4,8 +4,11 @@
   "description": "Full functional To-do app built with the MERN Stack (A MERN Stack project Sample)",
   "main": "server.js",
   "scripts": {
+    "clint-install": "npm install --prefix clint",
     "start": "node server.js",
-    "server": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
