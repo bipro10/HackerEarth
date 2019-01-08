@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import { ListGroup, ListGroupItem, Button } from 'reactstrap';
 import {  CSSTransition, TransitionGroup } from 'react-transition-group';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
-import uuid from 'uuid';
+import { getItems, deleteItem } from '../../store/actions/itemActions';
 
 
 class TodoList extends Component {
-
+  /*
   state = {
     items: [
       { id: uuid(), name: 'Make Cofee'},
@@ -15,22 +17,24 @@ class TodoList extends Component {
       { id: uuid(), name: 'Code'}
     ]
   }
-    
-  handelDelete = (e) => {
-    console.log(e.name, "deleted", e.id);
-    const items = this.state.items.filter(item => item.id !== e.id);
-    this.setState({items});
-};
+  */
+  componentDidMount() {
+    this.props.getItems();
+  }
+
+  handelDelete = id => {
+    this.props.deleteItem(id);
+  };
 
   render() {
-    const {items} = this.state;
+    const {items} = this.props.item;
     return (
         <ListGroup>
           <TransitionGroup className="shopping-list">
             {items.map(item => (
-              <CSSTransition key={item.id} timeout={1000} classNames="fade">
+              <CSSTransition key={item._id} timeout={1000} classNames="fade">
                 <ListGroupItem > 
-                  <Button className="remove-btn" color="danger" size="sm" onClick={()=>this.handelDelete(item)} > &times; </Button>
+                  <Button className="remove-btn" color="danger" size="sm" onClick={()=>this.handelDelete(item._id)} > &times; </Button>
                   { item.name }
                 </ListGroupItem>
               </CSSTransition>
@@ -42,4 +46,13 @@ class TodoList extends Component {
 }
 
 
-export default TodoList;
+TodoList.propTypes = {
+  getItems: PropTypes.func.isRequired,
+  item: PropTypes.object.isRequired
+};
+
+const mapStateToProps = state => ({
+  item: state.item
+});
+
+export default connect( mapStateToProps, { getItems, deleteItem })(TodoList);

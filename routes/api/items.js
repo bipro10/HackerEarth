@@ -49,7 +49,7 @@ router.put('/:id', (req, res, next) => {
 // @desc    Delete A Item from DB
 // @access  Public
 router.delete('/:id', (req, res, next) => {
-    console.log('POST', req.params.id);
+    console.log('DELETE', req.params.id);
     Item.findByIdAndDelete({_id: req.params.id})
     .then((item) => res.send(item))
     .catch(next);
