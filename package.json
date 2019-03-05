@@ -1,0 +1,24 @@
+{
+  "name": "mern-stack",
+  "version": "1.0.0",
+  "description": "MERN Stack Boilerplate",
+  "main": "app.js",
+  "scripts": {
+    "client-install": "npm install --prefix client",
+    "server-install": "npm install --prefix server",
+    "client": "npm start --prefix client",
+    "server": "nodemon server.js --prefix server",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start": "npm start --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/biprodas/MERN-Stack.git"
+  },
+  "author": "Biprodas Roy",
+  "license": "MIT",
+  "homepage": "https://github.com/biprodas/MERN-Stack",
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  }
+}
