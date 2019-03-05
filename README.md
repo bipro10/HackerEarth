@@ -1,6 +1,12 @@
-# JGMC
+MERN-Stack
+> This Project is for learning MERN Stack and a walk to become a Full Stack Developer using MongoDB, Express, React.js and Node.js.
 
-> Jashore Govt. Mohila COllege - Student Management System
+This repository have sevarel branches contain projects:
+
+- [x] master
+- [x] mern-Sample
+- [x] Todoist
+To access a project, checkout that branch.
 
 ## Quick Start
 
@@ -31,12 +37,3 @@ module.exports = {
   secretOrKey: 'YOUR_OWN_SECRET'
 };)
 ```
-
-## Main Technologies
-
-- [ ] Node.js
-- [ ] Express
-- [ ] Mongo DB
-- [ ] Mongoose
-- [ ] React.js
-- [ ] Redux
